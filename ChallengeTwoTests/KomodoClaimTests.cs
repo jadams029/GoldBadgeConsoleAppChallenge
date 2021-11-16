@@ -26,20 +26,20 @@ namespace ChallengeTwoTests
         [TestMethod]
         public void GetClaimsAll_ShouldReturnAllClaims()
         {
-            List<KomodoClaim> claims = _repo.GetAllClaims();
+            Queue<KomodoClaim> claims = _repo.GetAllClaims();
             bool claimsHasItems = claims.Contains(_claim);
             Assert.IsTrue(claimsHasItems);
         }
         [TestMethod]
         public void GetClaimByID_ShouldReturnCorrectClaim()
         {
-            KomodoClaim foundClaim = _repo.GetClaimByNumber(_claim.ClaimID);
+            KomodoClaim foundClaim = _repo.GetClaim();
             Assert.AreEqual(_claim, foundClaim);
         }
         [TestMethod]
         public void DeleteClaimByNumber_ShouldReturnTrue()
         {
-            bool removeClaim = _repo.DeleteClaimByNumber(_claim.ClaimID);
+            bool removeClaim = _repo.DeleteClaim();
             Assert.IsTrue(removeClaim);
         }
     }

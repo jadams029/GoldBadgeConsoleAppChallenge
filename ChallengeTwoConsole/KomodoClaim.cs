@@ -13,7 +13,7 @@ namespace ChallengeTwoConsole
         {
 
         }
-        public KomodoClaim(int claimID, ClaimType claimType, string claimDescription, double claimAmount, DateTime dateOfIncitent, DateTime dateOfClaim)
+        public KomodoClaim(int claimID, ClaimType claimType, string claimDescription, double claimAmount, DateTime dateOfIncitent, DateTime dateOfClaim )
         {
             ClaimID = claimID;
             ClaimType = claimType;
@@ -21,6 +21,7 @@ namespace ChallengeTwoConsole
             ClaimAmount = claimAmount;
             DateOfIncident = dateOfIncitent;
             DateOfClaim = dateOfClaim;
+            //IsValid = isValid;
         }
         public int ClaimID { get; set; }
         public ClaimType ClaimType { get; set; }
@@ -32,7 +33,7 @@ namespace ChallengeTwoConsole
         {
             get
             {
-                if ((DateOfClaim - DateOfIncident).TotalDays < 30)
+                if ((DateOfClaim - DateOfIncident).Days < 30)
                     return true;
                 else
                     return false;
