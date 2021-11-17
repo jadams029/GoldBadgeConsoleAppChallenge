@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengeTwoTests", "Challe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_junkyard", "00_junkyard\00_junkyard.csproj", "{7D23DE19-2B41-4A38-AE78-01924F1073ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengeThreeConsole", "ChallengeThreeConsole\ChallengeThreeConsole.csproj", "{6ADB9E76-7F60-45EE-A530-3239F0011BA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengeThreeTests", "ChallegeThreeTests\ChallengeThreeTests.csproj", "{DA08F310-3CDF-4717-8895-B1FA22C1D979}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{7D23DE19-2B41-4A38-AE78-01924F1073ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D23DE19-2B41-4A38-AE78-01924F1073ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D23DE19-2B41-4A38-AE78-01924F1073ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ADB9E76-7F60-45EE-A530-3239F0011BA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ADB9E76-7F60-45EE-A530-3239F0011BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ADB9E76-7F60-45EE-A530-3239F0011BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ADB9E76-7F60-45EE-A530-3239F0011BA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA08F310-3CDF-4717-8895-B1FA22C1D979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA08F310-3CDF-4717-8895-B1FA22C1D979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA08F310-3CDF-4717-8895-B1FA22C1D979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA08F310-3CDF-4717-8895-B1FA22C1D979}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
