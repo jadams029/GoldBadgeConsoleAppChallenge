@@ -66,39 +66,44 @@ namespace ChallengeTwoConsole.UI
         }
         private void ShowNextClaim()
         {
+            
             Console.Clear();
-            Console.WriteLine("Enter Claim Number");
-            int claimNum = int.Parse(Console.ReadLine());
+           
             KomodoClaim claim = _ClaimMenu.GetClaim();
+           
             if (claim != null)
             {
                 DisplayClaimStuff(claim);
                 Console.WriteLine("Do you want to deal with this claim? Y/N");
-                ConsoleKeyInfo key = Console.ReadKey();
-                if (key.Key.ToString()=="y")
+                string userInputKey = Console.ReadLine();
+                if (userInputKey == "y".ToLower())
                 {
-                    
+                    //remove the first claim in line
+                    bool success = _ClaimMenu.ProcessClaim();
+                    if (success == true)
+                    {
+                        Console.WriteLine("Claim was processed.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Claim was not Processed.");
+                    }
                 }
-                else if (key.Key.ToString()=="n")
-                {
 
-                }
                 else
                 {
-                    Console.WriteLine("Please enter a 'y' or 'n' ");
+                    Console.WriteLine("Press any key to contiue.");
+                    AnyKey();
+                    RunMenu();
                 }
             }
-            else
-                Console.WriteLine("Invalid Claim Number, claim not found.");
             AnyKey();
 
         }
         private void AddClaim()
         {
             Console.Clear();
-            KomodoClaim claim = new KomodoClaim();
-            Console.WriteLine("Enter Claim number");
-            claim.ClaimID = int.Parse(Console.ReadLine());         
+            KomodoClaim claim = new KomodoClaim();        
             Console.WriteLine("Enter Claim Type: \n" +
                 "1.) Car\n" +
                 "2.) Home\n" +
@@ -131,13 +136,14 @@ namespace ChallengeTwoConsole.UI
         {
             Console.WriteLine(
                 $"Claim ID: {claim.ClaimID}\n"+
-                $"Claim Type: {claim.ClaimType}/n" +
+                $"Claim Type: {claim.ClaimType}\n" +
                 $"Claim Description: {claim.ClaimDescription}\n" +
                 $"Claim Amount: {claim.ClaimAmount}\n" +
                 $"Date of Incident: {claim.DateOfIncident}\n" +
-                $"Date of Claim: {claim.DateOfClaim}\n" 
-                //$"Claim Valid?:{claim.IsValid}"
+                $"Date of Claim: {claim.DateOfClaim}\n" +
+                $"Claim Valid?:{claim.IsValid}"
                 );
+            Console.WriteLine();
         }
         private void SeedContent()
         {

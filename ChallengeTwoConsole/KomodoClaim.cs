@@ -21,7 +21,7 @@ namespace ChallengeTwoConsole
             ClaimAmount = claimAmount;
             DateOfIncident = dateOfIncitent;
             DateOfClaim = dateOfClaim;
-            //IsValid = isValid;
+            
         }
         public int ClaimID { get; set; }
         public ClaimType ClaimType { get; set; }
@@ -38,10 +38,7 @@ namespace ChallengeTwoConsole
                 else
                     return false;
             }
-            set
-            {
-
-            }
+            
         }
 
     }

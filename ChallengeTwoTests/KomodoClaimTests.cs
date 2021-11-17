@@ -39,7 +39,7 @@ namespace ChallengeTwoTests
         [TestMethod]
         public void DeleteClaimByNumber_ShouldReturnTrue()
         {
-            bool removeClaim = _repo.DeleteClaim();
+            bool removeClaim = _repo.ProcessClaim();
             Assert.IsTrue(removeClaim);
         }
     }
