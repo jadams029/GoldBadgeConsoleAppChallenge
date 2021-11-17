@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChallengeThreeConsole.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,9 @@ namespace ChallengeThreeConsole
     {
         static void Main(string[] args)
         {
+            ProgramUI ui = new ProgramUI();
+            ui.Run();
+
         }
     }
 }

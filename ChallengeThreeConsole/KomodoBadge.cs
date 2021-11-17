@@ -14,9 +14,8 @@ namespace ChallengeThreeConsole
         {
 
         }
-        public KomodoBadge(int badegeID,  List<string> doors)
-        {
-            BadgeID = badegeID;
+        public KomodoBadge(  List<string> doors)
+        {            
             Doors = doors;
         }
         public int BadgeID { get; set; }
