@@ -33,8 +33,7 @@ namespace ChallengeThreeConsole.UI
                 switch (userInput)
                 {
                     case "1":
-
-
+                        AddABadge();
                         break;
                     case "2":
                         EditABadge();
@@ -51,6 +50,42 @@ namespace ChallengeThreeConsole.UI
                 }
             }
         }
+
+        private void AddABadge()
+        {
+            Console.Clear();
+            KomodoBadge badge = new KomodoBadge();
+            bool hasListedAllDoors = false;
+            while (hasListedAllDoors == false)
+            {
+                //Console.WriteLine($"Badge number: {badge.BadgeID}");
+                Console.WriteLine("Do you want to access to a door? y/n");
+                string userInput = Console.ReadLine();
+                if (userInput == "Y".ToLower())
+                {
+                    Console.WriteLine("List a door to give Access too");
+                    userInput = Console.ReadLine();
+                    badge.Doors.Add(userInput);
+                    continue;
+
+                }
+                else
+                    hasListedAllDoors = true;
+                
+                bool success = _repo.CreatNewBadge(badge);
+                if (success)
+                {
+                    Console.WriteLine("Door added");
+                }
+                else
+                    Console.WriteLine("Door not added");
+            }
+
+
+
+            AnyKey();
+        }
+
         private void ShowAllBadges()
         {
             Console.Clear();
@@ -64,9 +99,15 @@ namespace ChallengeThreeConsole.UI
         private void EditABadge()
         {
             Console.Clear();
-            Console.WriteLine("Please Enter and Existing Badge");
+            Console.WriteLine("Please Enter an Existing Badge");
             int userInput = int.Parse(Console.ReadLine());
             KomodoBadge badge = _repo.GetBadgeByID(userInput);
+            if (userInput != badge.BadgeID)
+            {
+                Console.WriteLine("Enter a valid ID");
+            }
+            else
+                
 
             Console.WriteLine("What would you like to do?\n" +
                 "1.) Remove a Door.\n" +

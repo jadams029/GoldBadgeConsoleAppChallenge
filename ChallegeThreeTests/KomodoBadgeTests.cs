@@ -10,12 +10,22 @@ namespace ChallegeThreeTests
     {
         private KomodoBadgeRepo _repo;
         private KomodoBadge _badge;
+        private KomodoBadge badge1;
+        private KomodoBadge badge2;
+        private KomodoBadge badge3;
         [TestInitialize]
         public void init()
         {
             _repo = new KomodoBadgeRepo();
             _badge = new KomodoBadge();
+            _repo.CreatNewBadge(_badge);
+            badge1 = new KomodoBadge(new List<string> { "A1", "A2" });
+            badge2 = new KomodoBadge(new List<string> { "A1", "A2", "B1", "B2" });
+            badge3 = new KomodoBadge(new List<string> { "A1" });
 
+            _repo.CreatNewBadge(badge1);
+            _repo.CreatNewBadge(badge2);
+            _repo.CreatNewBadge(badge3);
         }
 
         [TestMethod]
@@ -27,16 +37,22 @@ namespace ChallegeThreeTests
         [TestMethod]
         public void GetBadgesAll_ShouldReturnAllBadges()
         {
-            List<KomodoBadge> badges = _repo.GetBadges();
-            bool badgesHasItems = badges.Contains(_badge);
+            Dictionary<int, KomodoBadge> badges = _repo.GetBadges();
+            bool badgesHasItems = badges.ContainsKey(_badge.BadgeID);
             Assert.IsTrue(badgesHasItems);
         }
         [TestMethod]
-        public void UpdateBadge_ShouldReturnTrue()
+        public void AddDoor_ShouldReturnTrue()
         {
-
-            bool updateResult = _repo.UpdateBadgeByID(12345);
-            Assert.IsTrue(updateResult);
+            bool addDoor = _repo.AddDoor(_badge.BadgeID,_badge.Doors.ToString());
+            Assert.IsTrue(addDoor);
+         
+        }
+        [TestMethod]
+        public void RemoveDoor_ShouldReturnTrue()
+        {
+            bool removerDoor = _repo.RemoveDoor(_badge.BadgeID,_badge.Doors.ToString());
+            Assert.IsTrue(removerDoor);
         }
     }
 }
