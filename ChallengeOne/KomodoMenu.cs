@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChallengeOne
 {
-    public enum IngredientsList {Fries = 1, Drink, Burger, ChickenSandwich, Nuggets  }
+    public enum IngredientsList {Burger=1, ChickenSandwich, Nuggets  }
     public class KomodoMenu
     {
         public KomodoMenu()

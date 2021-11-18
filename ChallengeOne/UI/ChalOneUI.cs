@@ -78,11 +78,10 @@ namespace ChallengeOne.UI
             menu.MealPrice = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter Meal Indgredients: ");
             Console.WriteLine("Enter Ingredient Items:  ");
-            Console.WriteLine("1. Fries \n" +
-                "2. Drink \n" +
-                "3. Burger \n" +
-                "4. Chicken Sandwich \n" +
-                "5. Chicken Nuggets ");
+            Console.WriteLine(                
+                "1. Burger \n" +
+                "2. Chicken Sandwich \n" +
+                "3. Chicken Nuggets ");
             string ingredientInput = Console.ReadLine();
             int ingrID = int.Parse(ingredientInput);
             menu.ItemIngredients = (IngredientsList)ingrID;
